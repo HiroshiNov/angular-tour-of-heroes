@@ -16,7 +16,8 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
 
   getHeroes(): void{
-    this.heroes = this.heroService.getHeros();
+    this.heroService.getHeroes()//Observable<Hero[]>を返す
+      .subscribe(heroes => this.heroes = heroes); //Observable.subscribe()　：出力された配列をコールバックに渡し、コンポーネントの heroes プロパティを設定します。
   }
 
   constructor(private heroService:HeroService) { //HeroService をinjectionする場所として認識される
