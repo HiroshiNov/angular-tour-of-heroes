@@ -2,6 +2,8 @@
 <ul class="heroes">
     <li [class.selected]="hero === selectedHero" *ngFor="let hero of heroes" (click)="onSelect(hero)">
         <!-- click を囲む括弧は、clickイベントであることを示す。ユーザがクリックするとonSelect(hero)式を実行する -->
+        <!-- [class.some-css-class] = "条件式"-->
+        <!-- some-css-class は追加するクラス名。"hero === selectedHero"は現在のheroがselectedHeroと一致下場合。-->
         <span class="badge">{{hero.id}}</span>{{hero.name}}
     </li>
 </ul>
